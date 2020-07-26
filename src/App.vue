@@ -1,28 +1,43 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div>
+    <router-view/>
+
+<!--    <van-tabbar route placeholder v-if="isShow">-->
+<!--      <van-tabbar-item replace to="/message" icon="chat-o">消息</van-tabbar-item>-->
+<!--      <van-tabbar-item replace to="/friends" icon="friends-o">好友</van-tabbar-item>-->
+<!--      <van-tabbar-item replace to="/me" icon="contact">我</van-tabbar-item>-->
+<!--    </van-tabbar>-->
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
 
 export default {
-  name: 'App',
-  components: {
-    HelloWorld
+
+  data(){
+    return{
+      isShow:false
+    }
+  },
+
+  created() {
+
+  },
+  methods:{
+    //登陆页面隐藏底部导航栏
+    // routerChange:function (to,from) {
+    //   console.info(to.name)
+    //   if(to.name!=="login"){
+    //     this.isShow=true
+    //   }else {
+    //     this.isShow=false
+    //   }
+    // }
   }
+
 }
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+
 </style>
